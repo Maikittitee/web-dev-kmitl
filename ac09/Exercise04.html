@@ -6,7 +6,7 @@
 			<script>
 
 				// get maincontainer instant
-				let maincontainer = document.getElementById("maincontainer");
+				var maincontainer = document.getElementById("maincontainer");
 
 				// title
 				const title = document.createElement("h2");
@@ -16,7 +16,12 @@
 				// time
 
 				let timecontainer = document.createElement("div");
+				// timecontainer.style.padding = '0';
+				// timecontainer.style.margin = '0';
+				timecontainer.style.border = "2px solid black";
+				// timecontainer.style.borderColor = "solid black";
 				maincontainer.appendChild(timecontainer);
+				timecontainer.style.display = 'none';
 
 
 				let worker = new Worker('worker.js');
@@ -32,9 +37,11 @@
 					timecontainer.style.right = '0px';
 					timecontainer.style.top = '0px';
 					button.style.display = 'none'
+					timecontainer.style.display = "block"
 					}
 					else{
 						timecontainer.style.position = 'relative';
+						timecontainer.style.display = "block"
 						
 					}
 				}
@@ -42,10 +49,12 @@
 				let isToggle = false;
 
 				// create button
+				let button_container = document.createElement("div");
 				let button = document.createElement("button");
 				let buttonText = document.createTextNode("Click me to start the clock");
 				button.appendChild(buttonText);
-				maincontainer.appendChild(button);
+				button_container.appendChild(button);
+				maincontainer.appendChild(button_container);
 				maincontainer.appendChild(document.createElement("br"));
 
 				// button logic
@@ -71,38 +80,46 @@
 
 				// personal info
 
-				br2=document.createElement("br");
-				br3=document.createElement("br");
-				personal_info = document.createElement("div");
-				name_id = document.createTextNode("- Krittithee&Tuncharoen of student");
-				course = document.createTextNode("- Subject:WEB APPLICATION DEVELOPMENT");
-				semester = document.createTextNode("- Semester:2\n");
+				personal_info = document.createElement("ul");
+				name_id = document.createElement("li")
+				name_id.appendChild(document.createTextNode("Krittithee&Tuncharoen of student"));
+
+				course = document.createElement("li");
+				course.appendChild(document.createTextNode("Subject:WEB APPLICATION DEVELOPMENT"));
+
+				semester = document.createElement("li");
+				semester.appendChild(document.createTextNode("Semester:2"));
+
 				personal_info.appendChild(name_id);
-				personal_info.appendChild(br2)
 				personal_info.appendChild(course);
-				personal_info.appendChild(br3)
 				personal_info.appendChild(semester);
 				personal_info.style.display = "none";
+				personal_info.style.listStyleType = "disc";
 				
+				// maincontainer.appendChild(personal_info);
 				
-
-
 				let personal_toggle = false;
 				personal_header = document.createElement("a");
 				personal_header_text = document.createTextNode("Personal Info");
 				personal_header.appendChild(personal_header_text);
+				
 				maincontainer.appendChild(personal_header);
 				maincontainer.appendChild(personal_info);
+
+				personal_header.style.color = "pink";
+				personal_header.style.textDecoration =  "underline";
 
 				// personal header : hover
 
 				personal_header.addEventListener("mouseover", function(){
 					personal_header.style.backgroundColor = "yellow";
+					personal_header.style.color = "black";
 					console.log("mouse in")
 				});
 				
 				personal_header.addEventListener("mouseout", function(){
 					personal_header.style.backgroundColor = "inherit";
+					personal_header.style.color = "pink";
 
 					console.log("mouse off")
 				});
@@ -120,8 +137,90 @@
 				});
 
 
+				// snap shot div
+
+				let snap_div = document.createElement("lu");
+				snap_h = document.createElement("h1");
+				snap_h.appendChild(document.createTextNode("Snapshots"));
+				snap_div.appendChild(snap_h);
+
 				// 4 clickable paragraph
+				fireworks = document.createElement("li");
+				fireworks.appendChild(document.createTextNode("Fireworks"));
+				crest = document.createElement("li");
+				crest.appendChild(document.createTextNode("Crest"));
+				action = document.createElement("li");
+				action.appendChild(document.createTextNode("Action"));
+				buf = document.createElement("li");
+				buf.appendChild(document.createTextNode("Buffalo"));
+
+				fireworks.style.textDecoration =  "underline";
+				crest.style.textDecoration =  "underline";
+				action.style.textDecoration =  "underline";
+				buf.style.textDecoration =  "underline";
+		
+
+				snap_div.appendChild(fireworks);
+				snap_div.appendChild(crest);
+				snap_div.appendChild(action);
+				snap_div.appendChild(buf);
+
+				snap_div.listStyleType = "disc";
 				 
+				maincontainer.appendChild(snap_div);
+
+				// image container
+
+				var img = document.createElement("img");
+				img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOraffDe4ylbade2gabAw0V9ojeOwS2MdcO93Mxu99Zt1-6rSplfFA1cPmyVbQni3EE0E&usqp=CAU";
+				img.width = 500;
+				maincontainer.appendChild(img);
+				
+				let fw_img = "https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRARbey8R6Pduj0FKoI5XvRommxM97TcKYaXgg_qO3EeLqhFryUXIGMANDN0xEU3L9_";
+				let action_img = "https://upload.wikimedia.org/wikipedia/commons/4/40/Heyward_lines_into_double_play_%2828356212176%29.jpg";
+				let crest_img = "https://i5.walmartimages.com/seo/2-Pc-Crest-Statue-Set_42a64adc-c7ee-4460-899e-17d3ced34285.730c0b2986f6cdb864075e8e4521b03a.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF";
+				let buf_img = "https://www.awf.org/sites/default/files/styles/species_image/public/2020-04/SpeciesPage_AfricanBuffalo02_Challenges.jpg?h=29c6c1f6&itok=VHn68yL8";
+
+				fireworks.addEventListener("click", function(){
+					img.src = fw_img;
+				})
+				crest.addEventListener("click", function(){
+					img.src = crest_img;
+				})
+				action.addEventListener("click", function(){
+					img.src = action_img;
+				})
+				buf.addEventListener("click", function(){
+					img.src = buf_img;
+				})
+
+
+				// mouseover
+				fireworks.addEventListener("mouseover", function(){
+					fireworks.style.cursor = "pointer"
+				})
+				crest.addEventListener("mouseover", function(){
+					crest.style.cursor = "pointer"
+				})
+				action.addEventListener("mouseover", function(){
+					action.style.cursor = "pointer"
+				})
+				buf.addEventListener("mouseover", function(){
+					buf.style.cursor = "pointer"
+				})
+				// mouse off
+				fireworks.addEventListener("mouseout", function(){
+					fireworks.style.cursor = "default"
+				})
+				crest.addEventListener("mouseout", function(){
+					crest.style.cursor = "default"
+				})
+				action.addEventListener("mouseout", function(){
+					action.style.cursor = "default"
+				})
+				buf.addEventListener("mouseout", function(){
+					buf.style.cursor = "default"
+				})
 
 			</script>
     </body>
