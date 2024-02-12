@@ -1,16 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { Component } from "react";
 import React from 'react';
 
 class Idk extends React.Component{
-	display(){
-		alert('Hello world!');
+	
+	constructor(props) {
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
 	}
+	
+	handleClick() {
+		alert(this.props.title)
+	}
+	
 	render() {
 		return (
-			<button onClick={this.display} type="button">Click Me!</button>
+			<button onClick={this.handleClick} type="button" title={this.props.title}>{this.props.title}</button>
 		);
 	}
 }
@@ -23,7 +29,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-		<Idk />
+		<Idk title="My Button" />
       </header>
     </div>
   );
