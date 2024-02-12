@@ -4,10 +4,13 @@ import './App.css';
 import { Component } from "react";
 import React from 'react';
 
-class Haha1 extends React.Component{
+class Idk extends React.Component{
+	display(){
+		alert('Hello world!');
+	}
 	render() {
 		return (
-			<button type="button">Click Me!</button>
+			<button onClick={this.display} type="button">Click Me!</button>
 		);
 	}
 }
@@ -20,7 +23,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-		<Haha1 />
+		<Idk />
       </header>
     </div>
   );
