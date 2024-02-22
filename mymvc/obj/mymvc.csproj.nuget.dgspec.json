@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/maikittitee/Documents/KMITL/2023-2/Webdev/mymvc/mymvc.csproj": {}
+  },
+  "projects": {
+    "/Users/maikittitee/Documents/KMITL/2023-2/Webdev/mymvc/mymvc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/maikittitee/Documents/KMITL/2023-2/Webdev/mymvc/mymvc.csproj",
+        "projectName": "mymvc",
+        "projectPath": "/Users/maikittitee/Documents/KMITL/2023-2/Webdev/mymvc/mymvc.csproj",
+        "packagesPath": "/Users/maikittitee/.nuget/packages/",
+        "outputPath": "/Users/maikittitee/Documents/KMITL/2023-2/Webdev/mymvc/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/maikittitee/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/8.0.1/libexec/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

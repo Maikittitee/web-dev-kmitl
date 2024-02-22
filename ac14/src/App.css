@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+
+body{
+	/* text-align: center; */
+	background-color: grey
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+	text-align: center;
+	color:rgb(251, 207, 32)
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.foodcontainer{
+	background-color: #ffefd9;
+	padding: 20px;
+	margin-bottom: 20px;
+	margin-right:10%;
+	margin-left:10%;
+	border-radius: 10px;
+	border: 2px solid black;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+.preview{
+	display: flex;
+  align-items: center; /* This will vertically center the items in the container */
+  justify-content: space-between; /* This will put space between the text and the image */
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.preview h2{
+	margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.preview h3{
+	margin-bottom: 30px;
+}
+
+.preview img{
+	width: 40%;
+}
+
+.buttonGroup{
+	text-align: center;
+}
+
+.buttonGroup .VoteCnt{
+	color:rgb(155, 70, 155);
+	display: inline-block;
+	font-weight:bolder;
+	font-size: x-large;
+	border: 2px solid black;
+	padding: 10px 20px 10px 20px;
+	margin: 10px;
+	background-color: rgb(23, 194, 23);
+	border-radius: 10px;
+}
+
+.buttonGroup button{
+	font-size: large;
+	padding: 10px 20px 10px 20px;
 }
